@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import io from 'socket.io-client';
 import globalVars from '../globalVars';
+import PushNotification from 'react-native-push-notification';
+import * as PushNotificationConf from '../utils/pushNotifConf'; 
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -37,6 +39,14 @@ export default class HomeScreen extends React.Component {
       this.setState({
         txt: 'btn3'
       })
+    });
+  }
+
+  componentDidMount() {
+    PushNotification.configure(PushNotificationConf);
+    PushNotification.localNotificationSchedule({
+      message: "My Notification Message", // (required)
+      date: new Date(Date.now() + (5 * 1000)) // in 5 secs
     });
   }
 
