@@ -11,16 +11,20 @@ export default class LoginScreen extends React.Component {
       userEmail: '',
       userPassword: '',
       msg: 'no message'
-    };
+    }
+  }
 
-    this.socket = this.props.navigation.getParam('socket');
-    
-    // this.socket.on('phone:receive', (msg) => {
-    //   this.setState({
-    //     ...this.state,
-    //     msg: 'received message'
-    //   })
-    // });
+  componentWillMount() {
+    this.socket = global.socket;
+  }
+
+  componentDidMount() {
+    this.socket.on('phone:receive', (msg) => {
+      this.setState({
+        ...this.state,
+        msg: 'received message'
+      })
+    });
 
     this.socket.on('server:testroom', () => {
       console.log('test room ok');
@@ -64,12 +68,12 @@ export default class LoginScreen extends React.Component {
   }
 
   sendSocket() {
-    this.socket.emit('phone:send');
+    socket.emit('phone:send');
     
   }
 
   joinRoom() {
-    this.socket.emit('phone:joinTestRoom')
+    socket.emit('phone:joinTestRoom')
   }
 
   render() {

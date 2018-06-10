@@ -3,7 +3,8 @@ import { View, Text } from 'react-native';
 
 export default class BidScreen extends React.Component {
   static navigationOptions = {
-    header: {
+    title: 'sdkjsd',
+    headerStyle: {
       display: 'none',
     }
   };

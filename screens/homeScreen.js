@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Button, Image, TextInput, StyleSheet } from 'react-native';
-import io from 'socket.io-client';
 import PushNotification from 'react-native-push-notification';
-import DatePicker from 'react-native-datepicker'
+import DatePicker from 'react-native-datepicker';
+import io from 'socket.io-client';
 import moment from 'moment';
 import localization from 'moment/locale/fr';
 import globalVars from '../globalVars';
@@ -11,15 +11,9 @@ import globalVars from '../globalVars';
 const { deviceWidth, deviceHeight } = globalVars;
 
 export default class HomeScreen extends React.Component {
-  static navigationOptions = {
-    headerStyle: {
-      display: 'none',
-    }
-  };
-
   constructor(props) {
     super(props);
-  
+
     this.state = {
       txt: 'lalala'
     }
@@ -28,7 +22,9 @@ export default class HomeScreen extends React.Component {
   componentWillMount() {
     console.log(globalVars.localIP);
     
-    this.socket = io(`${globalVars.remoteApi}`);
+    this.socket = global.socket;
+    console.log(this.socket);
+    
   }
 
   componentDidMount() {
@@ -142,6 +138,7 @@ export default class HomeScreen extends React.Component {
             </Text>
             <TouchableOpacity
               style={styles.searchBtn}
+              onPress={() => this.props.navigation.navigate('Results')}
             >
               <Text style={styles.searchBtnTxt}>Rechercher</Text>
             </TouchableOpacity>

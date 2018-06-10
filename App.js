@@ -6,65 +6,91 @@ import BidScreen from './screens/bidScreen';
 import TicketsScreen from './screens/ticketsScreen';
 import AlertsScreen from './screens/alertsScreen';
 import ProfilScreen from './screens/profilScreen';
+import React from 'react';
+import { Image } from 'react-native';
+import ResultsScreen from './screens/resultsScreen';
 
 console.disableYellowBox = true;
 
-const tabRoutes = {
-  home: {
-    screen: HomeScreen
+const HomeStack = createStackNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      header: null
+    }
   },
-  bid: {
-    screen: BidScreen,
+  Profil: {
+    screen: ProfilScreen,
+    navigationOptions: {
+    }
   },
-  tickets: {
-    screen: TicketsScreen
+  Results: {
+    screen: ResultsScreen,
+    navigationOptions: {
+    }
   },
-  alerts: {
-    screen: TicketsScreen
-  },
-  profil: {
-    screen: ProfilScreen
+  Login: {
+    screen: LoginScreen,
+    navigationOptions: {
+      title: 'login'
+    }
   }
-};
+});
 
-const stackRoutes = {
-  home: { screen: TabNavigator(tabRoutes, {
-    tabBarPosition: 'bottom'
-  }) },
-  bid: { screen: BidScreen },
-  tickets: { screen: TicketsScreen },
-  alerts: { screen: TicketsScreen },
-  profil: { screen: ProfilScreen }
-};
+const Tabs = createBottomTabNavigator({
+  Home: {
+    screen: HomeStack,
+    navigationOptions: {
+      tabBarOptions: {
+        showLabel: false,
+      },
+      tabBarIcon: <Image style={{ width: 22, height: 22 }} source={require('./images/tab_search_icon.png')} />
+    }
+  },
+  Bid: {
+    screen: BidScreen,
+    navigationOptions: {
+      tabBarOptions: {
+        showLabel: false
+      },
+      tabBarIcon: <Image style={{ width: 22, height: 22 }} source={require('./images/tab_bid_icon.png')} />
+    }
+  },
+  Tickets: {
+    screen: TicketsScreen,
+    navigationOptions: {
+      tabBarOptions: {
+        showLabel: false
+      },
+      tabBarIcon: <Image style={{ width: 22, height: 22 }} source={require('./images/tab_ticket_icon.png')} />
+    }
+  },
+  Alerts: {
+    screen: AlertsScreen,
+    navigationOptions: {
+      tabBarOptions: {
+        showLabel: false
+      },
+      tabBarIcon: <Image style={{ width: 22, height: 22 }} source={require('./images/tab_alert_icon.png')} />
+    }
+  },
+  Profil: {
+    screen: ProfilScreen,
+    navigationOptions: {
+      tabBarOptions: {
+        showLabel: false
+      },
+      tabBarIcon: <Image style={{ width: 22, height: 22 }} source={require('./images/tab_profil_icon.png')} />
+    }
+  },
+});
 
-const App = StackNavigator(stackRoutes, {
+const App = StackNavigator({
+  tabs: {
+    screen: Tabs
+  }
+}, {
   headerMode: 'none'
 })
-
-
-// StackNavigator(
-//   {
-//     Home: { screen: HomeScreen },
-//     LoginView: { screen: LoginView }
-//   },
-//   navigationOptions: { header:{ visible: false }});
-
-// const App = TabNavigator(tabRoutes, {
-//   tabBarComponent: TabBarBottom,
-//   tabBarPosition: 'bottom',
-//   showIcon: true,
-//   tabBarOptions: {
-//     activeTintColor: '#e91e63',
-//     labelStyle: {
-//       fontSize: 12,
-//     },
-//     style: {
-//       backgroundColor: 'blue',
-//       justifyContent: 'center'
-//     },
-//   },
-//   animationEnabled: false,
-//   swipeEnabled: false,
-// });
 
 export default App;
