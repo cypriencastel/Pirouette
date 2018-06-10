@@ -36,7 +36,6 @@ export default class LoginScreen extends React.Component {
       ...this.state,
       [field]: val
     });
-    
   }
 
   async handleLogin() {

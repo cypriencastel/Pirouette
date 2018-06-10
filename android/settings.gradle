@@ -1,4 +1,6 @@
 rootProject.name = 'Pirouette'
+include ':react-native-socketio'
+project(':react-native-socketio').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-socketio/android')
 include ':react-native-push-notification'
 project(':react-native-push-notification').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-push-notification/android')
 

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -40,6 +39,18 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		D2C5DAA520C7FB9D0077E504 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C5DAA420C7FB9D0077E504 /* GameKit.framework */; };
 		D2C5DAB820C7FD510077E504 /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2C5DAB520C7FCD50077E504 /* libRCTPushNotification.a */; };
+		58ABA99FCD0B42B6B002EF69 /* abrade-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08249CFBA2974CF0BB62BEA8 /* abrade-bold.otf */; };
+		D5CF939644F34D0CA9ECA028 /* Abrade.otf in Resources */ = {isa = PBXBuildFile; fileRef = 591A9DA1BF424ABF9B495DC5 /* Abrade.otf */; };
+		AF6E4216E04A4E279440DF0D /* Brandon Grotesque.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C6E979F796341DDA6072BB4 /* Brandon Grotesque.otf */; };
+		5AE2B78068D349689E8B80B5 /* Brandon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 623DF75228794C3F9B3284D2 /* Brandon.ttf */; };
+		502FC647BBFA4175BC58256D /* BrandonGrotesque-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9C2B3437D24C15B0BF6568 /* BrandonGrotesque-Black.otf */; };
+		D7B035BFA05D4FABA80AC787 /* BrandonGrotesque-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47BB95A985CE4D8693CC424D /* BrandonGrotesque-Bold.otf */; };
+		7E1A2C7642614695B84BFF6B /* BrandonGrotesque-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A6F53E15EC74DEBACB7CAE4 /* BrandonGrotesque-Light.ttf */; };
+		8F32FD7B2376414690B54FDD /* BrandonGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACDD455279C94773AE86DB2D /* BrandonGrotesque-Medium.ttf */; };
+		C3B87DB410174D94B88D9932 /* Lora-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ACBFCD4BF43BB9ABB5DBA /* Lora-Bold.otf */; };
+		B83D3B39E8D948C2ACD91D8B /* Lora-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7292FBC6610D4BAD957456A7 /* Lora-Italic.otf */; };
+		582D29AD824046A1BAF4CF9B /* Lora.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA021F255C704F6EA1A6F807 /* Lora.otf */; };
+		03D8A65A8993455CAF4BCBB0 /* Agenda-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 37ED938B17F74A9D95577B43 /* Agenda-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -359,8 +370,21 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		D299BDE820C9204B00AFF9F8 /* Pirouette.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Pirouette.entitlements; path = Pirouette/Pirouette.entitlements; sourceTree = "<group>"; };
 		D2C5DAA420C7FB9D0077E504 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D2C5DAAF20C7FCD50077E504 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		08249CFBA2974CF0BB62BEA8 /* abrade-bold.otf */ = {isa = PBXFileReference; name = "abrade-bold.otf"; path = "../fonts/abrade-bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		591A9DA1BF424ABF9B495DC5 /* Abrade.otf */ = {isa = PBXFileReference; name = "Abrade.otf"; path = "../fonts/Abrade.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5C6E979F796341DDA6072BB4 /* Brandon Grotesque.otf */ = {isa = PBXFileReference; name = "Brandon Grotesque.otf"; path = "../fonts/Brandon Grotesque.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		623DF75228794C3F9B3284D2 /* Brandon.ttf */ = {isa = PBXFileReference; name = "Brandon.ttf"; path = "../fonts/Brandon.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B9C2B3437D24C15B0BF6568 /* BrandonGrotesque-Black.otf */ = {isa = PBXFileReference; name = "BrandonGrotesque-Black.otf"; path = "../fonts/BrandonGrotesque-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		47BB95A985CE4D8693CC424D /* BrandonGrotesque-Bold.otf */ = {isa = PBXFileReference; name = "BrandonGrotesque-Bold.otf"; path = "../fonts/BrandonGrotesque-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A6F53E15EC74DEBACB7CAE4 /* BrandonGrotesque-Light.ttf */ = {isa = PBXFileReference; name = "BrandonGrotesque-Light.ttf"; path = "../fonts/BrandonGrotesque-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ACDD455279C94773AE86DB2D /* BrandonGrotesque-Medium.ttf */ = {isa = PBXFileReference; name = "BrandonGrotesque-Medium.ttf"; path = "../fonts/BrandonGrotesque-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3E0ACBFCD4BF43BB9ABB5DBA /* Lora-Bold.otf */ = {isa = PBXFileReference; name = "Lora-Bold.otf"; path = "../fonts/Lora-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7292FBC6610D4BAD957456A7 /* Lora-Italic.otf */ = {isa = PBXFileReference; name = "Lora-Italic.otf"; path = "../fonts/Lora-Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EA021F255C704F6EA1A6F807 /* Lora.otf */ = {isa = PBXFileReference; name = "Lora.otf"; path = "../fonts/Lora.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		37ED938B17F74A9D95577B43 /* Agenda-Bold.otf */ = {isa = PBXFileReference; name = "Agenda-Bold.otf"; path = "../fonts/Agenda-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +526,7 @@
 		13B07FAE1A68108700A75B9A /* Pirouette */ = {
 			isa = PBXGroup;
 			children = (
+				D299BDE820C9204B00AFF9F8 /* Pirouette.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -600,6 +625,7 @@
 				00E356EF1AD99517003FC87E /* PirouetteTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				F26CEFA6316445D8A2F5AA07 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -634,6 +660,26 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		F26CEFA6316445D8A2F5AA07 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				08249CFBA2974CF0BB62BEA8 /* abrade-bold.otf */,
+				591A9DA1BF424ABF9B495DC5 /* Abrade.otf */,
+				5C6E979F796341DDA6072BB4 /* Brandon Grotesque.otf */,
+				623DF75228794C3F9B3284D2 /* Brandon.ttf */,
+				1B9C2B3437D24C15B0BF6568 /* BrandonGrotesque-Black.otf */,
+				47BB95A985CE4D8693CC424D /* BrandonGrotesque-Bold.otf */,
+				0A6F53E15EC74DEBACB7CAE4 /* BrandonGrotesque-Light.ttf */,
+				ACDD455279C94773AE86DB2D /* BrandonGrotesque-Medium.ttf */,
+				3E0ACBFCD4BF43BB9ABB5DBA /* Lora-Bold.otf */,
+				7292FBC6610D4BAD957456A7 /* Lora-Italic.otf */,
+				EA021F255C704F6EA1A6F807 /* Lora.otf */,
+				37ED938B17F74A9D95577B43 /* Agenda-Bold.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -716,7 +762,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -724,9 +770,12 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = BKVC356282;
+						DevelopmentTeam = 99D895TFL2;
 						SystemCapabilities = {
 							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1107,6 +1156,18 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				58ABA99FCD0B42B6B002EF69 /* abrade-bold.otf in Resources */,
+				D5CF939644F34D0CA9ECA028 /* Abrade.otf in Resources */,
+				AF6E4216E04A4E279440DF0D /* Brandon Grotesque.otf in Resources */,
+				5AE2B78068D349689E8B80B5 /* Brandon.ttf in Resources */,
+				502FC647BBFA4175BC58256D /* BrandonGrotesque-Black.otf in Resources */,
+				D7B035BFA05D4FABA80AC787 /* BrandonGrotesque-Bold.otf in Resources */,
+				7E1A2C7642614695B84BFF6B /* BrandonGrotesque-Light.ttf in Resources */,
+				8F32FD7B2376414690B54FDD /* BrandonGrotesque-Medium.ttf in Resources */,
+				C3B87DB410174D94B88D9932 /* Lora-Bold.otf in Resources */,
+				B83D3B39E8D948C2ACD91D8B /* Lora-Italic.otf in Resources */,
+				582D29AD824046A1BAF4CF9B /* Lora.otf in Resources */,
+				03D8A65A8993455CAF4BCBB0 /* Agenda-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1262,9 +1323,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pirouette/Pirouette.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = BKVC356282;
+				DEVELOPMENT_TEAM = 99D895TFL2;
 				INFOPLIST_FILE = Pirouette/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1282,8 +1344,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pirouette/Pirouette.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = BKVC356282;
+				DEVELOPMENT_TEAM = 99D895TFL2;
 				INFOPLIST_FILE = Pirouette/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
