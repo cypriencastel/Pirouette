@@ -1,5 +1,7 @@
 import React from 'react';
-import { ScrollView, View, Button, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  ScrollView, View, Button, Text, StyleSheet,
+  Animated, Easing, Image, TouchableOpacity } from 'react-native';
 import globalVars from '../globalVars';
 
 
@@ -22,8 +24,44 @@ export default class TicketDetails extends React.Component {
 
     this.navigation = this.props.navigation;
     this.state = {
-      hide: false
+      hide: false,
+      animView: new Animated.ValueXY({ x: 0, y: 0 })
     }
+    this.anim = Animated.timing(
+      this.state.animView,
+      {
+        toValue: { x: 0, y: 200 },
+        duration: 500,
+        easing: Easing.in(Easing.ease)
+      }
+    )
+  }
+
+  animPlay() {
+    const currentY = this.state.animView.y._value;
+    const hasBeenPlayed = currentY === 0 ? false : true;
+
+    if (hasBeenPlayed) {
+      return Animated.timing(
+        this.state.animView,
+        {
+          toValue: { x: 0, y: 0 },
+          duration: 500,
+          easing: Easing.in(Easing.ease)
+        }
+      ).start()
+    }
+
+    return Animated.timing(
+      this.state.animView,
+      {
+        toValue: { x: 0, y: 200 },
+        duration: 500,
+        easing: Easing.in(Easing.ease)
+      }
+    ).start()
+
+    console.log(this.state.animView.y._value);
   }
 
   renderHourStation(hour, city, station) {
@@ -42,58 +80,68 @@ export default class TicketDetails extends React.Component {
   render() {
     const departure = this.renderHourStation('17h46', 'Paris', 'Gare de Lyon');
     const arrival = this.renderHourStation('18h27', 'Lyon', 'Lyon Part-Dieu');
+    const val = this.state.animView.getTranslateTransform()
     return (
-      <ScrollView>
-        <View style={styles.header}>
-          {departure}
-          <View style={styles.tripTimeContainer}>
-            <Text style={styles.tripTime}>44 min</Text>
-            <View style={styles.tripTimeStroke} />
-          </View>
-          {arrival}
-          <View style={styles.awaitingPeopleContainer}>
-            <Image style={{ width: 22, height: 12, marginRight: 10 }} source={require('../images/people_icon.png')} />
-            <Text style={styles.awaitingPeopleTxt}>12 personnes suivent</Text>
-          </View>
-        </View>
-        <View>
-          <View style={styles.pricingContainer}>
-            <View style={{ flex: 0.5, flexDirection: 'row' }}>
-              <Image style={styles.sncfLogoImg} source={require('../images/logo_sncf.png')} />
-              <Text style={styles.pricingSNCFTxt}>Tarif SNCF</Text>
+      <View>
+        <Animated.View style={[ val, { position: 'absolute', zIndex: 9999, width: 200, height: 200, backgroundColor: 'red' } ]}>
+            <Text>Animated view</Text>
+        </Animated.View>
+        <ScrollView>
+          <Button title="animate !" onPress={() => {
+            this.animPlay();
+            }}
+          />
+          <View style={styles.header}>
+            {departure}
+            <View style={styles.tripTimeContainer}>
+              <Text style={styles.tripTime}>44 min</Text>
+              <View style={styles.tripTimeStroke} />
             </View>
-            <View style={{ flex: 0.5, alignItems: 'flex-end' }}>
-              <Text style={styles.pricingSNCFValue}>77,00 €</Text>
-            </View>
-          </View>
-          <View style={styles.bidsContainer}>
-            <View style={styles.highestBid}>
-              <Text style={styles.highestBidTxt}>Enchère la plus haute</Text>
-              <Text style={styles.highestBidValue}>22,00 €</Text>
-            </View>
-            <View style={styles.userBid}>
-              <Text style={styles.UserBidTxt}>Votre enchère</Text>
-              <Text style={styles.UserBidValue}>20,00 €</Text>
-            </View>
-            <View style={styles.higherOrdersContainer}>
-              <Image style={{ width: 22, height: 12, marginRight: 10 }} source={require('../images/people_icon_blue.png')}  />
-              <Text style={styles.higherOrdersAmount}>1 personne a une enchère supérieure</Text>
+            {arrival}
+            <View style={styles.awaitingPeopleContainer}>
+              <Image style={{ width: 22, height: 12, marginRight: 10 }} source={require('../images/people_icon.png')} />
+              <Text style={styles.awaitingPeopleTxt}>12 personnes suivent</Text>
             </View>
           </View>
           <View>
-            <View style={styles.remainingTimeContainer}>
-              <Text style={styles.remainingTimeTxt}>Fermeture des enchères : </Text>
-              <Text style={styles.remainingTimeValue}>03:12:59</Text>
+            <View style={styles.pricingContainer}>
+              <View style={{ flex: 0.5, flexDirection: 'row' }}>
+                <Image style={styles.sncfLogoImg} source={require('../images/logo_sncf.png')} />
+                <Text style={styles.pricingSNCFTxt}>Tarif SNCF</Text>
+              </View>
+              <View style={{ flex: 0.5, alignItems: 'flex-end' }}>
+                <Text style={styles.pricingSNCFValue}>77,00 €</Text>
+              </View>
             </View>
-            <TouchableOpacity onPress={() => this.navigation.navigate('Payment')} style={styles.raiseUpBtn}>
-              <Text style={{ color: 'white', fontSize: 20, fontFamily: 'abrade-bold' }}>Enchérir</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.quitBtn}>
-              <Text style={styles.quitBtnTxt}>Quitter l'enchère</Text>
-            </TouchableOpacity>
+            <View style={styles.bidsContainer}>
+              <View style={styles.highestBid}>
+                <Text style={styles.highestBidTxt}>Enchère la plus haute</Text>
+                <Text style={styles.highestBidValue}>22,00 €</Text>
+              </View>
+              <View style={styles.userBid}>
+                <Text style={styles.UserBidTxt}>Votre enchère</Text>
+                <Text style={styles.UserBidValue}>20,00 €</Text>
+              </View>
+              <View style={styles.higherOrdersContainer}>
+                <Image style={{ width: 22, height: 12, marginRight: 10 }} source={require('../images/people_icon_blue.png')}  />
+                <Text style={styles.higherOrdersAmount}>1 personne a une enchère supérieure</Text>
+              </View>
+            </View>
+            <View>
+              <View style={styles.remainingTimeContainer}>
+                <Text style={styles.remainingTimeTxt}>Fermeture des enchères : </Text>
+                <Text style={styles.remainingTimeValue}>03:12:59</Text>
+              </View>
+              <TouchableOpacity onPress={() => this.navigation.navigate('Payment')} style={styles.raiseUpBtn}>
+                <Text style={{ color: 'white', fontSize: 20, fontFamily: 'abrade-bold' }}>Enchérir</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.quitBtn}>
+                <Text style={styles.quitBtnTxt}>Quitter l'enchère</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
     );
   }
 }
