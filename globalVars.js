@@ -9,6 +9,7 @@ const globalVars = {
   deviceHeight: Dimensions.get('window').height,
   navyBlue: '#0F3868',
   mainGrey: '#979797',
+  darkGrey: '#4A4A4A',
   mainPink: '#FC136C'
 };
 

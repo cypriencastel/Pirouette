@@ -12,7 +12,7 @@ export default class ResultTicket extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={() => this.navigation.navigate('TicketDetails')} style={ styles.container }>
+      <TouchableOpacity onPress={() => this.navigation.navigate('TicketDetails', {navigation: this.navigation})} style={ styles.container }>
         <View style={ styles.leftBox }>
           <View style={{ alignItems: 'center', justifyContent: 'center' }} >
             <View style={ styles.circle } />

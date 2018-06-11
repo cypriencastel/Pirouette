@@ -10,6 +10,7 @@ import React from 'react';
 import { Image } from 'react-native';
 import ResultsScreen from './screens/resultsScreen';
 import TicketDetails from './screens/ticketDetails';
+import PaymentScreen from './screens/paymentScreen';
 
 console.disableYellowBox = true;
 
@@ -30,6 +31,9 @@ const HomeStack = createStackNavigator({
   },
   TicketDetails: {
     screen: TicketDetails
+  },
+  Payment: {
+    screen: PaymentScreen
   },
   Login: {
     screen: LoginScreen,
