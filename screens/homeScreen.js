@@ -132,17 +132,17 @@ export default class HomeScreen extends React.Component {
           </View>
         </View>
         <View>
-            <Text style={{ textAlign: 'center' }}>
-              Pour la première fois,{"\n"}
-              rechercher les trains complets !
-            </Text>
-            <TouchableOpacity
-              style={styles.searchBtn}
-              onPress={() => this.props.navigation.navigate('Results')}
-            >
-              <Text style={styles.searchBtnTxt}>Rechercher</Text>
-            </TouchableOpacity>
-          </View>
+          <Text style={{ textAlign: 'center' }}>
+            Pour la première fois,{"\n"}
+            rechercher les trains complets !
+          </Text>
+          <TouchableOpacity
+            style={styles.searchBtn}
+            onPress={() => this.props.navigation.navigate('Results', { navigation: this.props.navigation })}
+          >
+            <Text style={styles.searchBtnTxt}>Rechercher</Text>
+          </TouchableOpacity>
+        </View>
         {/* <Text style={styles.btn}>{this.state.txt}</Text>
         <Button title="launch socket" />
         <Button title="go to login" style={styles.btn} onPress={() => this.props.navigation.navigate('Login', { socket: this.socket })} />

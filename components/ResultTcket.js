@@ -5,9 +5,14 @@ import globalVars from '../globalVars';
 const { deviceWidth, deviceHeight } = globalVars
 
 export default class ResultTicket extends React.Component {
+  constructor(props) {
+    super(props);
+    this.navigation = this.props.navigation;
+  }
+
   render() {
     return (
-      <TouchableOpacity style={ styles.container }>
+      <TouchableOpacity onPress={() => this.navigation.navigate('TicketDetails')} style={ styles.container }>
         <View style={ styles.leftBox }>
           <View style={{ alignItems: 'center', justifyContent: 'center' }} >
             <View style={ styles.circle } />
@@ -93,8 +98,8 @@ const styles = StyleSheet.create({
     height: 40
   },
   circle: {
-    width: 22,
-    height: 22,
+    width: 15,
+    height: 15,
     borderRadius: 50,
     borderWidth: 2,
     borderColor: globalVars.navyBlue

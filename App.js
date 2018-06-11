@@ -9,6 +9,7 @@ import ProfilScreen from './screens/profilScreen';
 import React from 'react';
 import { Image } from 'react-native';
 import ResultsScreen from './screens/resultsScreen';
+import TicketDetails from './screens/ticketDetails';
 
 console.disableYellowBox = true;
 
@@ -25,9 +26,10 @@ const HomeStack = createStackNavigator({
     }
   },
   Results: {
-    screen: ResultsScreen,
-    navigationOptions: {
-    }
+    screen: ResultsScreen
+  },
+  TicketDetails: {
+    screen: TicketDetails
   },
   Login: {
     screen: LoginScreen,
