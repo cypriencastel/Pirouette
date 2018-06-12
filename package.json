@@ -19,9 +19,9 @@
     "react-native": "0.55.4",
     "react-native-datepicker": "^1.7.2",
     "react-native-push-notification": "^3.0.2",
-    "react-native-socket.io-client": "^1.4.8",
-    "react-native-socketio": "^0.3.0",
+    "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^2.0.4",
+    "rn-placeholder": "mfrachet/rn-placeholder",
     "rnpm": "^1.9.0",
     "socket.io": "^2.1.1"
   },

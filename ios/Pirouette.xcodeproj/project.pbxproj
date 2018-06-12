@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -14,6 +13,7 @@
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* PirouetteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PirouetteTests.m */; };
 		03D8A65A8993455CAF4BCBB0 /* Agenda-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 37ED938B17F74A9D95577B43 /* Agenda-Bold.otf */; };
+		080E8644563B74ED3026E2D4 /* libPods-Pirouette.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841ED6ED01FAA4F267747539 /* libPods-Pirouette.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -41,11 +41,13 @@
 		58ABA99FCD0B42B6B002EF69 /* abrade-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 08249CFBA2974CF0BB62BEA8 /* abrade-bold.otf */; };
 		5AE2B78068D349689E8B80B5 /* Brandon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 623DF75228794C3F9B3284D2 /* Brandon.ttf */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
+		70101485AEA474F73EDB2A04 /* libPods-Pirouette-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD9D56A454326E42B3A73DE /* libPods-Pirouette-tvOSTests.a */; };
 		7E1A2C7642614695B84BFF6B /* BrandonGrotesque-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A6F53E15EC74DEBACB7CAE4 /* BrandonGrotesque-Light.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8F32FD7B2376414690B54FDD /* BrandonGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACDD455279C94773AE86DB2D /* BrandonGrotesque-Medium.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		AF6E4216E04A4E279440DF0D /* Brandon Grotesque.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C6E979F796341DDA6072BB4 /* Brandon Grotesque.otf */; };
+		B628146235FEEACB6E912E7E /* libPods-PirouetteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13567D850F1D53A5BC01A44 /* libPods-PirouetteTests.a */; };
 		B83D3B39E8D948C2ACD91D8B /* Lora-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7292FBC6610D4BAD957456A7 /* Lora-Italic.otf */; };
 		C3B87DB410174D94B88D9932 /* Lora-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E0ACBFCD4BF43BB9ABB5DBA /* Lora-Bold.otf */; };
 		D2872B7C20CED20D00327B17 /* Abrade.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7772AE114AA741E698E24B93 /* Abrade.otf */; };
@@ -356,6 +358,7 @@
 		00E356F21AD99517003FC87E /* PirouetteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PirouetteTests.m; sourceTree = "<group>"; };
 		08249CFBA2974CF0BB62BEA8 /* abrade-bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "abrade-bold.otf"; path = "../fonts/abrade-bold.otf"; sourceTree = "<group>"; };
 		0A6F53E15EC74DEBACB7CAE4 /* BrandonGrotesque-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonGrotesque-Light.ttf"; path = "../fonts/BrandonGrotesque-Light.ttf"; sourceTree = "<group>"; };
+		0DD9D56A454326E42B3A73DE /* libPods-Pirouette-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pirouette-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Pirouette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pirouette.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -372,6 +375,7 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ED938B17F74A9D95577B43 /* Agenda-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Agenda-Bold.otf"; path = "../fonts/Agenda-Bold.otf"; sourceTree = "<group>"; };
 		3E0ACBFCD4BF43BB9ABB5DBA /* Lora-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Bold.otf"; path = "../fonts/Lora-Bold.otf"; sourceTree = "<group>"; };
+		457FEC0E43F3F87D6763D245 /* Pods-Pirouette-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pirouette-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pirouette-tvOSTests/Pods-Pirouette-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		47BB95A985CE4D8693CC424D /* BrandonGrotesque-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonGrotesque-Bold.otf"; path = "../fonts/BrandonGrotesque-Bold.otf"; sourceTree = "<group>"; };
 		5C6E979F796341DDA6072BB4 /* Brandon Grotesque.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Brandon Grotesque.otf"; path = "../fonts/Brandon Grotesque.otf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -380,11 +384,18 @@
 		7772AE114AA741E698E24B93 /* Abrade.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Abrade.otf; path = ../fonts/Abrade.otf; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		841ED6ED01FAA4F267747539 /* libPods-Pirouette.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pirouette.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AF17810211E742037FC85B5 /* Pods-Pirouette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pirouette.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pirouette/Pods-Pirouette.release.xcconfig"; sourceTree = "<group>"; };
 		ACDD455279C94773AE86DB2D /* BrandonGrotesque-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BrandonGrotesque-Medium.ttf"; path = "../fonts/BrandonGrotesque-Medium.ttf"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		AFE3BB32E047B807E07D8EC1 /* Pods-Pirouette-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pirouette-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pirouette-tvOSTests/Pods-Pirouette-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C13567D850F1D53A5BC01A44 /* libPods-PirouetteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PirouetteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D09134C2465DAD0C0B1F97B2 /* Pods-PirouetteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PirouetteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PirouetteTests/Pods-PirouetteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D299BDE820C9204B00AFF9F8 /* Pirouette.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Pirouette.entitlements; path = Pirouette/Pirouette.entitlements; sourceTree = "<group>"; };
 		D2C5DAA420C7FB9D0077E504 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D2C5DAAF20C7FCD50077E504 /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
+		D84F6A381BB76376CB8CCFD7 /* Pods-PirouetteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PirouetteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PirouetteTests/Pods-PirouetteTests.release.xcconfig"; sourceTree = "<group>"; };
+		E66B7DF458D1111AF772D9AA /* Pods-Pirouette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pirouette.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pirouette/Pods-Pirouette.debug.xcconfig"; sourceTree = "<group>"; };
 		EA021F255C704F6EA1A6F807 /* Lora.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Lora.otf; path = ../fonts/Lora.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				B628146235FEEACB6E912E7E /* libPods-PirouetteTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +428,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				080E8644563B74ED3026E2D4 /* libPods-Pirouette.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */,
+				70101485AEA474F73EDB2A04 /* libPods-Pirouette-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +581,9 @@
 			children = (
 				D2C5DAA420C7FB9D0077E504 /* GameKit.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
+				841ED6ED01FAA4F267747539 /* libPods-Pirouette.a */,
+				0DD9D56A454326E42B3A73DE /* libPods-Pirouette-tvOSTests.a */,
+				C13567D850F1D53A5BC01A44 /* libPods-PirouetteTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -627,6 +644,8 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				F26CEFA6316445D8A2F5AA07 /* Resources */,
+				AA9DFA0FB9517C093F650D7B /* Pods */,
+				D2C7100220CFCADB0061DC53 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -642,6 +661,19 @@
 				2D02E4901E0B4A5D006451C7 /* Pirouette-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AA9DFA0FB9517C093F650D7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E66B7DF458D1111AF772D9AA /* Pods-Pirouette.debug.xcconfig */,
+				9AF17810211E742037FC85B5 /* Pods-Pirouette.release.xcconfig */,
+				AFE3BB32E047B807E07D8EC1 /* Pods-Pirouette-tvOSTests.debug.xcconfig */,
+				457FEC0E43F3F87D6763D245 /* Pods-Pirouette-tvOSTests.release.xcconfig */,
+				D09134C2465DAD0C0B1F97B2 /* Pods-PirouetteTests.debug.xcconfig */,
+				D84F6A381BB76376CB8CCFD7 /* Pods-PirouetteTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		ADBDB9201DFEBF0600ED6528 /* Products */ = {
@@ -660,6 +692,14 @@
 				D2C5DAB720C7FCD50077E504 /* libRCTPushNotification-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D2C7100220CFCADB0061DC53 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				365A9D93516849F880633EA3 /* libRNVectorIcons.a */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		F26CEFA6316445D8A2F5AA07 /* Resources */ = {
@@ -688,9 +728,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PirouetteTests" */;
 			buildPhases = (
+				60ECDC4D341D0A02A7E557FE /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				2F6BC9F6F877AAA6377884BC /* [CP] Embed Pods Frameworks */,
+				7350BA1F2AC3AEF8613039DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -706,10 +749,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Pirouette" */;
 			buildPhases = (
+				A1192F2C85C4A74D795FB0BB /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				D0B144A5727C4689E18DD241 /* [CP] Embed Pods Frameworks */,
+				35045A97F2D875B7D711C3B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -742,9 +788,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Pirouette-tvOSTests" */;
 			buildPhases = (
+				3B33B4BA1D953526CC2D5E26 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
+				3E50AAF53AB69131EC02D142 /* [CP] Embed Pods Frameworks */,
+				08FBE084D327FC3168FF3A3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1203,6 +1252,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		08FBE084D327FC3168FF3A3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pirouette-tvOSTests/Pods-Pirouette-tvOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1216,6 +1280,148 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		2F6BC9F6F877AAA6377884BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PirouetteTests/Pods-PirouetteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35045A97F2D875B7D711C3B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Pirouette/Pods-Pirouette-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pirouette/Pods-Pirouette-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B33B4BA1D953526CC2D5E26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pirouette-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E50AAF53AB69131EC02D142 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pirouette-tvOSTests/Pods-Pirouette-tvOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60ECDC4D341D0A02A7E557FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PirouetteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7350BA1F2AC3AEF8613039DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PirouetteTests/Pods-PirouetteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1192F2C85C4A74D795FB0BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pirouette-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0B144A5727C4689E18DD241 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pirouette/Pods-Pirouette-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1284,15 +1490,22 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D09134C2465DAD0C0B1F97B2 /* Pods-PirouetteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = PirouetteTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1304,12 +1517,19 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D84F6A381BB76376CB8CCFD7 /* Pods-PirouetteTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = PirouetteTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1321,12 +1541,16 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E66B7DF458D1111AF772D9AA /* Pods-Pirouette.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pirouette/Pirouette.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 99D895TFL2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = Pirouette/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1342,11 +1566,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF17810211E742037FC85B5 /* Pods-Pirouette.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Pirouette/Pirouette.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 99D895TFL2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = Pirouette/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1372,8 +1600,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "Pirouette-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1398,8 +1632,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "Pirouette-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1414,6 +1654,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFE3BB32E047B807E07D8EC1 /* Pods-Pirouette-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1423,8 +1664,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "Pirouette-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1439,6 +1686,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 457FEC0E43F3F87D6763D245 /* Pods-Pirouette-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1448,8 +1696,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "Pirouette-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",

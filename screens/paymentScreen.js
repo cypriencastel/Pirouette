@@ -63,9 +63,6 @@ const styles = StyleSheet.create({
     color: globalVars.navyBlue
   },
   ti: {
-    borderWidth: 1.5,
-    borderRadius: 5,
-    width: deviceWidth * 0.8,
-    borderColor: globalVars.mainGrey
+    ...globalVars.textInput
   }
 });

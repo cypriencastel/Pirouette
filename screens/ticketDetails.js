@@ -1,7 +1,8 @@
 import React from 'react';
+// import { Icon } from 'react-native-vector-icons/dist/FontAwesome';
 import {
   ScrollView, View, Button, Text, StyleSheet,
-  Animated, Easing, Image, TouchableOpacity } from 'react-native';
+  Animated, Easing, Image, TouchableOpacity, TextInput } from 'react-native';
 import globalVars from '../globalVars';
 
 
@@ -25,43 +26,24 @@ export default class TicketDetails extends React.Component {
     this.navigation = this.props.navigation;
     this.state = {
       hide: false,
-      animView: new Animated.ValueXY({ x: 0, y: 0 })
+      userBidValue: '',
+      animView: new Animated.ValueXY({ x: 0, y: deviceHeight })
     }
-    this.anim = Animated.timing(
-      this.state.animView,
-      {
-        toValue: { x: 0, y: 200 },
-        duration: 500,
-        easing: Easing.in(Easing.ease)
-      }
-    )
   }
 
   animPlay() {
     const currentY = this.state.animView.y._value;
-    const hasBeenPlayed = currentY === 0 ? false : true;
-
-    if (hasBeenPlayed) {
-      return Animated.timing(
-        this.state.animView,
-        {
-          toValue: { x: 0, y: 0 },
-          duration: 500,
-          easing: Easing.in(Easing.ease)
-        }
-      ).start()
-    }
-
+    
+    const nextY = currentY === deviceHeight ? 0 : deviceHeight;
+    
     return Animated.timing(
       this.state.animView,
       {
-        toValue: { x: 0, y: 200 },
+        toValue: { x: 0, y: nextY },
         duration: 500,
         easing: Easing.in(Easing.ease)
       }
     ).start()
-
-    console.log(this.state.animView.y._value);
   }
 
   renderHourStation(hour, city, station) {
@@ -80,17 +62,33 @@ export default class TicketDetails extends React.Component {
   render() {
     const departure = this.renderHourStation('17h46', 'Paris', 'Gare de Lyon');
     const arrival = this.renderHourStation('18h27', 'Lyon', 'Lyon Part-Dieu');
-    const val = this.state.animView.getTranslateTransform()
+    const animStyle = this.state.animView.getTranslateTransform()
     return (
       <View>
-        <Animated.View style={[ val, { position: 'absolute', zIndex: 9999, width: 200, height: 200, backgroundColor: 'red' } ]}>
-            <Text>Animated view</Text>
+        <Animated.View style={[ animStyle, { position: 'absolute', zIndex: 1000, width: deviceWidth, height: deviceHeight, alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.5)' } ]}>
+            <TouchableOpacity
+              style={{ position: 'absolute', width: 22, height: 22, top: 10, right: 10 }}
+              onPress={() => this.animPlay()}
+            >
+              <Image style={{ width: 22, height: 22 }} source={require('../images/cross.png')} />
+            </TouchableOpacity>
+            <Text style={{ fontFamily: 'abrade-bold', fontSize: 16, color: globalVars.navyBlue, marginTop: 20 }}>Votre nouvelle enchère</Text>
+            <TextInput
+              onChangeText={(txt) => {
+                this.setState({
+                  userBidValue: txt
+                })
+              }}
+              style={styles.testRaiseInput}
+            />
+            <TouchableOpacity
+              style={styles.raiseUpBtn}
+              onPress={() => this.navigation.navigate('Payment')}
+            >
+              <Text>Valider</Text>
+            </TouchableOpacity>
         </Animated.View>
         <ScrollView>
-          <Button title="animate !" onPress={() => {
-            this.animPlay();
-            }}
-          />
           <View style={styles.header}>
             {departure}
             <View style={styles.tripTimeContainer}>
@@ -132,7 +130,7 @@ export default class TicketDetails extends React.Component {
                 <Text style={styles.remainingTimeTxt}>Fermeture des enchères : </Text>
                 <Text style={styles.remainingTimeValue}>03:12:59</Text>
               </View>
-              <TouchableOpacity onPress={() => this.navigation.navigate('Payment')} style={styles.raiseUpBtn}>
+              <TouchableOpacity onPress={() => this.animPlay()} style={styles.raiseUpBtn}>
                 <Text style={{ color: 'white', fontSize: 20, fontFamily: 'abrade-bold' }}>Enchérir</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.quitBtn}>
@@ -302,13 +300,7 @@ const styles = StyleSheet.create({
     color: globalVars.mainPink
   },
   raiseUpBtn: {
-    backgroundColor: globalVars.mainPink,
-    alignItems: 'center',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    width: deviceWidth * 0.8,
-    height: 50,
-    borderRadius: 5,
+    ...globalVars.pinkBtn,
   },
   quitBtn: {
     alignSelf: 'center',
@@ -328,5 +320,8 @@ const styles = StyleSheet.create({
   popUp: {
     height: 0,
     width: 0,
+  },
+  testRaiseInput: {
+    ...globalVars.textInput
   }
 });
