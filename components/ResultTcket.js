@@ -1,5 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, Image, StyleSheet } from 'react-native';
+import moment from 'moment';
+import localization from 'moment/locale/fr';
 import globalVars from '../globalVars';
 
 const { deviceWidth, deviceHeight } = globalVars
@@ -8,6 +10,7 @@ export default class ResultTicket extends React.Component {
   constructor(props) {
     super(props);
     this.navigation = this.props.navigation;
+    this.data = this.props.data;
   }
 
   render() {
@@ -20,8 +23,8 @@ export default class ResultTicket extends React.Component {
             <View style={ styles.circle } />
           </View>
           <View style={ styles.timesContainer } >
-            <Text style={styles.time}>12H45</Text>
-            <Text style={styles.time}>14H56</Text>
+            <Text style={styles.time}>{moment(this.data.departureDate).format('HH:mm:ss')}</Text>
+            <Text style={styles.time}>{moment(this.data.arrivalDate).format('HH:mm:ss')}</Text>
           </View>
           <View>
 
@@ -34,7 +37,7 @@ export default class ResultTicket extends React.Component {
           </View>
           <View style={ styles.prices } >
             <Image style={{ width: 31, height: 16, marginRight: 10 }} source={ require('../images/logo_sncf.png') } />
-            <Text style={ styles.sncfPrice }>77€</Text>
+            <Text style={ styles.sncfPrice }>{this.data.priceProposals.SEMIFLEX.amount}</Text>
             <View style={styles.pirouettePrice}>
               <Text style={{ fontFamily: 'abrade-bold', fontSize: 20, color: 'white' }}>55€</Text>
             </View>

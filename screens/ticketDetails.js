@@ -65,7 +65,7 @@ export default class TicketDetails extends React.Component {
     const animStyle = this.state.animView.getTranslateTransform()
     return (
       <View>
-        <Animated.View style={[ animStyle, { position: 'absolute', zIndex: 1000, width: deviceWidth, height: deviceHeight, alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.5)' } ]}>
+        <Animated.View style={[ animStyle, { position: 'absolute', zIndex: 1000, width: deviceWidth, height: deviceHeight, alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)' } ]}>
             <TouchableOpacity
               style={{ position: 'absolute', width: 22, height: 22, top: 10, right: 10 }}
               onPress={() => this.animPlay()}

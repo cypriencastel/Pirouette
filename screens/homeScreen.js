@@ -2,7 +2,6 @@ import React from 'react';
 import { View, TouchableOpacity, Text, Button, Image, TextInput, StyleSheet } from 'react-native';
 import PushNotification from 'react-native-push-notification';
 import DatePicker from 'react-native-datepicker';
-import io from 'socket.io-client';
 import moment from 'moment';
 import localization from 'moment/locale/fr';
 import globalVars from '../globalVars';
@@ -71,9 +70,9 @@ export default class HomeScreen extends React.Component {
             <DatePicker
               style={{flex: 1}}
               date={this.state.date}
-              mode="date"
+              mode="datetime"
               placeholder="selectionnez la date"
-              format="LL"
+              // format="LL"
               showIcon={false}
               minDate="08-06-2018"
               confirmBtnText="OK"
@@ -88,10 +87,12 @@ export default class HomeScreen extends React.Component {
                   width: '100%'
                 }
               }}
-              onDateChange={date => {
-                date = moment(date)._i;
+              onDateChange={datetime => {
                 
-                return this.setState({date: date});
+                datetime = moment(datetime).format();
+                datetime = datetime.split('+')[0];
+                
+                return this.setState({datetime: datetime});
               }}
             />
             <View style={{ padding: 15 }}>
@@ -103,9 +104,8 @@ export default class HomeScreen extends React.Component {
             <DatePicker
               style={{flex: 1}}
               date={this.state.hour}
-              mode="time"
+              mode="datetime"
               placeholder="selectionnez l'heure"
-              format="LT"
               showIcon={false}
               confirmBtnText="OK"
               cancelBtnText="Annuler"
@@ -119,11 +119,11 @@ export default class HomeScreen extends React.Component {
                   width: '100%'
                 }
               }}
-              onDateChange={hour => {
-                hour = moment(hour)._i;
-                console.log(hour);
+              onDateChange={datetime => {
+                datetime = moment(datetime).format();
+                datetime = datetime.split('+')[0];
                 
-                return this.setState({hour: hour});
+                return this.setState({datetime: datetime});
               }}
             />
             <View style={{ padding: 15 }}>
@@ -138,7 +138,7 @@ export default class HomeScreen extends React.Component {
           </Text>
           <TouchableOpacity
             style={styles.searchBtn}
-            onPress={() => this.props.navigation.navigate('Results', { navigation: this.props.navigation })}
+            onPress={() => this.props.navigation.navigate('Results', { navigation: this.props.navigation, from: this.state.from, to: this.state.to, datetime: this.state.datetime, })}
           >
             <Text style={styles.searchBtnTxt}>Rechercher</Text>
           </TouchableOpacity>
