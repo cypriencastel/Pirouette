@@ -60,6 +60,9 @@ export default class TicketDetails extends React.Component {
   }
 
   render() {
+    const d = this.data;
+    const { departureDate, arrivalDate } = d;
+    const sncfPrice = d.priceProposals.SEMIFLEX.amount;
     const departure = this.renderHourStation('17h46', 'Paris', 'Gare de Lyon');
     const arrival = this.renderHourStation('18h27', 'Lyon', 'Lyon Part-Dieu');
     const animStyle = this.state.animView.getTranslateTransform()

@@ -27,10 +27,10 @@ export default class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    PushNotification.localNotificationSchedule({
-      message: "My Notification Message", // (required)
-      date: new Date(Date.now() + (5 * 1000)) // in 5 secs
-    });
+    // PushNotification.localNotificationSchedule({
+    //   message: "My Notification Message", // (required)
+    //   date: new Date(Date.now() + (5 * 1000)) // in 5 secs
+    // });
   }
 
   render() {
@@ -69,12 +69,12 @@ export default class HomeScreen extends React.Component {
             <Text style={{padding: 15, fontWeight: '500', color: globalVars.navyBlue, fontFamily: 'Brandon Grotesque' }} >Le</Text>
             <DatePicker
               style={{flex: 1}}
-              date={this.state.date}
+              date={this.state.datetime}
               mode="datetime"
               placeholder="selectionnez la date"
               // format="LL"
               showIcon={false}
-              minDate="08-06-2018"
+              minDate={new Date()}
               confirmBtnText="OK"
               cancelBtnText="Annuler"
               customStyles={{
@@ -107,6 +107,7 @@ export default class HomeScreen extends React.Component {
               mode="datetime"
               placeholder="selectionnez l'heure"
               showIcon={false}
+              minDate={new Date()}
               confirmBtnText="OK"
               cancelBtnText="Annuler"
               customStyles={{

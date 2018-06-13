@@ -11,11 +11,13 @@ export default class ResultTicket extends React.Component {
     super(props);
     this.navigation = this.props.navigation;
     this.data = this.props.data;
+    console.log(this.data);
+    
   }
 
   render() {
     return (
-      <TouchableOpacity onPress={() => this.navigation.navigate('TicketDetails', {navigation: this.navigation})} style={ styles.container }>
+      <TouchableOpacity onPress={() => this.navigation.navigate('TicketDetails', {navigation: this.navigation, data: this.data})} style={ styles.container }>
         <View style={ styles.leftBox }>
           <View style={{ alignItems: 'center', justifyContent: 'center' }} >
             <View style={ styles.circle } />
