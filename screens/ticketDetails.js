@@ -1,9 +1,11 @@
 import React from 'react';
 // import { Icon } from 'react-native-vector-icons/dist/FontAwesome';
 import {
-  ScrollView, View, Button, Text, StyleSheet,
-  Animated, Easing, Image, TouchableOpacity, TextInput } from 'react-native';
+  ScrollView, View, Button, Text, StyleSheet, AsyncStorage,
+  Animated, Easing, Image, TouchableOpacity, Alert, TextInput } from 'react-native';
+import moment from 'moment';
 import globalVars from '../globalVars';
+import axios from 'axios';
 
 
 const { deviceWidth, deviceHeight } = globalVars;
@@ -29,6 +31,75 @@ export default class TicketDetails extends React.Component {
       userBidValue: '',
       animView: new Animated.ValueXY({ x: 0, y: deviceHeight })
     }
+    this.data = this.navigation.getParam('data');
+    console.log('ticket details === ', this.data);
+  }
+
+  componentDidMount() {
+    console.log('is mounting');
+    
+    this.getUserBid();
+  }
+
+  async getUserBid() {
+    console.log('get user bid');
+    
+    const userInfos = await AsyncStorage.getItem('userInfos');
+    this.userInfos = JSON.parse(userInfos);
+
+    console.log('userinfos === ', this.userInfos);
+    
+    this.isConnected = this.userInfos === null ? false : true;
+
+    const ticket_id = this.data.id;
+    const user_id = this.isConnected === true ? this.userInfos.id : null;
+    console.log('await req');
+    
+    const req = await axios.get(`${globalVars.localIP}/getUserBids`, {
+      params: {
+        ticket_id: ticket_id,
+        user_id: user_id
+      }
+    });
+    
+    return this.setState({
+      userBidData: req.data
+    })
+  }
+
+  /**
+   * Si user est connecte, requete pour récupérer enchere la plus haute et user enchere plus haute
+   * render raiseUp btn + quit bid btn
+   * Sinon user est pas connecté, render login btn and userBid == '--'
+  */
+  renderLoginBtnAndUserBid(isConnected) {
+
+    console.log('renderLoginBtnAndUserBid');
+
+    if (isConnected) {
+      console.log('connected');
+      
+      return this.callToActionView = (
+        <View>
+          <TouchableOpacity onPress={() => this.checkLog()} style={styles.raiseUpBtn}>
+            <Text style={{ color: 'white', fontSize: 20, fontFamily: 'abrade-bold' }}>Enchérir</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.quitBtn}>
+            <Text style={styles.quitBtnTxt}>Quitter l'enchère</Text>
+          </TouchableOpacity>
+        </View>
+      );
+    } else {
+      console.log('not connected');
+      return this.callToActionView = (
+        <View>
+          <TouchableOpacity onPress={() => this.navigation.navigate('Login')} style={styles.raiseUpBtn}>
+            <Text style={{ color: 'white', fontSize: 20, fontFamily: 'abrade-bold' }}>M'identifier</Text>
+          </TouchableOpacity>
+        </View>
+      );
+    }
+
   }
 
   animPlay() {
@@ -46,7 +117,34 @@ export default class TicketDetails extends React.Component {
     ).start()
   }
 
+  async checkLog() {
+    if (await this.userInfos !== null) {
+      
+      return this.animPlay();
+    }
+    return Alert.alert(
+      'Identification requise',
+      'Vous devez vous identifier pour miser',
+      [
+        {text: 'Annuler', onPress: () => { return; }, style: 'cancel'},
+        {text: "M'identifier", onPress: () => this.navigation.navigate('Login')},
+      ],
+      { cancelable: true }
+    );
+  }
+
+  async handleBid() {
+    const userInfosString = await AsyncStorage.getItem('userInfos');
+    const userInfos = JSON.parse(userInfosString);
+
+    console.log(userInfos);
+    
+  }
+
   renderHourStation(hour, city, station) {
+    
+    hour = moment(hour).format('HH:mm');
+    
     return (
       <View style={styles.timetable}>
         <View style={styles.hourContainer}>
@@ -62,10 +160,23 @@ export default class TicketDetails extends React.Component {
   render() {
     const d = this.data;
     const { departureDate, arrivalDate } = d;
+
+    const originDetail = d.segments[0].originDetail;
+    const { cityLabelFr: originCity, stationLabelFr: originStation } = originDetail;
+    
+    const destinationDetail = d.segments[0].destinationDetail;
+    const { cityLabelFr: destinationCity, stationLabelFr: destinationStation } = destinationDetail;
+
     const sncfPrice = d.priceProposals.SEMIFLEX.amount;
-    const departure = this.renderHourStation('17h46', 'Paris', 'Gare de Lyon');
-    const arrival = this.renderHourStation('18h27', 'Lyon', 'Lyon Part-Dieu');
-    const animStyle = this.state.animView.getTranslateTransform()
+
+    const departure = this.renderHourStation(departureDate, originCity, originStation);
+    const arrival = this.renderHourStation(arrivalDate, destinationCity, destinationStation);
+    
+    const animStyle = this.state.animView.getTranslateTransform();
+
+    const callToActionView = this.renderLoginBtnAndUserBid(this.isConnected);
+    console.log(callToActionView);
+    
     return (
       <View>
         <Animated.View style={[ animStyle, { position: 'absolute', zIndex: 1000, width: deviceWidth, height: deviceHeight, alignItems: 'center', backgroundColor: 'rgba(255, 255, 255, 0.8)' } ]}>
@@ -86,12 +197,12 @@ export default class TicketDetails extends React.Component {
             />
             <TouchableOpacity
               style={styles.raiseUpBtn}
-              onPress={() => this.navigation.navigate('Payment')}
+              onPress={() => this.handleBid()}
             >
               <Text>Valider</Text>
             </TouchableOpacity>
         </Animated.View>
-        <ScrollView>
+        <ScrollView contentContainerStyle={{ width: deviceWidth, height: deviceHeight }}>
           <View style={styles.header}>
             {departure}
             <View style={styles.tripTimeContainer}>
@@ -133,12 +244,7 @@ export default class TicketDetails extends React.Component {
                 <Text style={styles.remainingTimeTxt}>Fermeture des enchères : </Text>
                 <Text style={styles.remainingTimeValue}>03:12:59</Text>
               </View>
-              <TouchableOpacity onPress={() => this.animPlay()} style={styles.raiseUpBtn}>
-                <Text style={{ color: 'white', fontSize: 20, fontFamily: 'abrade-bold' }}>Enchérir</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.quitBtn}>
-                <Text style={styles.quitBtnTxt}>Quitter l'enchère</Text>
-              </TouchableOpacity>
+              {callToActionView}
             </View>
           </View>
         </ScrollView>

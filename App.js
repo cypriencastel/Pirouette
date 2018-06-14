@@ -80,8 +80,8 @@ const Tabs = createBottomTabNavigator({
       tabBarIcon: <Image style={{ width: 22, height: 22 }} source={require('./images/tab_alert_icon.png')} />
     }
   },
-  Profil: {
-    screen: ProfilScreen,
+  Login: {
+    screen: LoginScreen,
     navigationOptions: {
       tabBarOptions: {
         showLabel: false

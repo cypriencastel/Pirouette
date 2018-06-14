@@ -25,7 +25,7 @@ export default class ResultsScreen extends React.Component {
 
   async fetchTickets() {
     
-    const tickets = await axios.post(`${globalVars.remoteApi}/fetchTickets`, {
+    const tickets = await axios.post(`${globalVars.localIP}/fetchTickets`, {
       from: this.from,
       to: this.to,
       datetime: this.datetime

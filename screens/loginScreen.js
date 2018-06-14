@@ -43,7 +43,7 @@ export default class LoginScreen extends React.Component {
   }
 
   async handleLogin() {
-    const req = await axios.post(`http://${globalVars.localIP}:3000/login`,
+    const req = await axios.post(`${globalVars.localIP}/login`,
       {
         email: this.state.userEmail,
         password: this.state.userPassword
@@ -53,10 +53,14 @@ export default class LoginScreen extends React.Component {
     const status = req.data.status;
 
     if (status === 'ok') {
-      console.log('login ok');
+      // const user = req.data.
+      // AsyncStorage.setItem('userCredentials', JSON.stringify())
       
       try {
+        console.log('try');
+        
         await AsyncStorage.setItem('userInfos', JSON.stringify(req.data.user));
+        console.log(JSON.stringify(req.data.user));
       } catch (error) {
         console.error(error); 
       }
