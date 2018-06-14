@@ -10,7 +10,7 @@ const mainPink = '#FC136C';
 
 
 const globalVars = {
-  localIP: 'http://10.174.36.66:8080',
+  localIP: 'http://192.168.0.22:8080',
   api: 'http://localhost:8080',
   remoteApi: 'https://pirouette-server.herokuapp.com',
   deviceWidth: deviceWidth,

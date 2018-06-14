@@ -29,15 +29,17 @@ export default class TicketDetails extends React.Component {
     this.state = {
       hide: false,
       userBidValue: '',
-      animView: new Animated.ValueXY({ x: 0, y: deviceHeight })
+      animView: new Animated.ValueXY({ x: 0, y: deviceHeight }),
+      userHighestBid: '-',
+      highestBid: '00,00',
     }
     this.data = this.navigation.getParam('data');
+    this.trainID = this.data.segments[0].trainNumber;
     console.log('ticket details === ', this.data);
   }
 
   componentDidMount() {
     console.log('is mounting');
-    
     this.getUserBid();
   }
 
@@ -51,7 +53,7 @@ export default class TicketDetails extends React.Component {
     
     this.isConnected = this.userInfos === null ? false : true;
 
-    const ticket_id = this.data.id;
+    const ticket_id = this.trainID;
     const user_id = this.isConnected === true ? this.userInfos.id : null;
     console.log('await req');
     
@@ -61,10 +63,20 @@ export default class TicketDetails extends React.Component {
         user_id: user_id
       }
     });
-    
-    return this.setState({
-      userBidData: req.data
-    })
+
+    const userHighestBid = req.data.userHighestBid[0][0].amount;
+    const highestBid = req.data.highestBid[0][0].amount;
+
+    if (highestBid !== undefined) {
+      this.setState({
+        highestBid: highestBid
+      })
+    } 
+    if (userHighestBid !== undefined) {
+      this.setState({
+        userHighestBid: userHighestBid
+      })
+    }
   }
 
   /**
@@ -72,11 +84,13 @@ export default class TicketDetails extends React.Component {
    * render raiseUp btn + quit bid btn
    * Sinon user est pas connecté, render login btn and userBid == '--'
   */
-  renderLoginBtnAndUserBid(isConnected) {
+  renderLoginBtnAndUserBid() {
 
-    console.log('renderLoginBtnAndUserBid');
+    console.log('renderLoginBtnAndUserBid', isConnected);
+    
+    const isConnected = AsyncStorage.getItem('userInfos').then(userInfos => console.log('userInfos render... === ', userInfos));
 
-    if (isConnected) {
+    if (isConnected !== null) {
       console.log('connected');
       
       return this.callToActionView = (
@@ -117,6 +131,10 @@ export default class TicketDetails extends React.Component {
     ).start()
   }
 
+  isNumeric(s) {
+    return !isNaN(s) && isFinite(s);
+  }
+
   async checkLog() {
     if (await this.userInfos !== null) {
       
@@ -134,11 +152,22 @@ export default class TicketDetails extends React.Component {
   }
 
   async handleBid() {
-    const userInfosString = await AsyncStorage.getItem('userInfos');
-    const userInfos = JSON.parse(userInfosString);
-
-    console.log(userInfos);
+    // const userInfosString = await AsyncStorage.getItem('userInfos');
+    // const userInfos = JSON.parse(userInfosString);
+    console.log(this.userInfos, this.state.userBidValue);
+    const bid = this.state.userBidValue;
+    if (!this.isNumeric(bid)) {
+      return Alert.alert('Mise', 'Votre mise ne doit contenir que des chiffres');
+    }
+    const req = await axios.post(`${globalVars.localIP}/createBid`, {
+      ticket_id: this.trainID,
+      user_id: this.userInfos.id,
+      amount: this.state.userBidValue
+    })
+    console.log('bid created');
     
+    global.socket.emit('phone:sendNotifToBidders', {amount: bid, ticket_id: this.trainID, from: this.data.segments[0].originDetail.cityLabelFr, to: this.data.segments[0].destinationDetail.cityLabelFr})
+
   }
 
   renderHourStation(hour, city, station) {
@@ -175,7 +204,8 @@ export default class TicketDetails extends React.Component {
     const animStyle = this.state.animView.getTranslateTransform();
 
     const callToActionView = this.renderLoginBtnAndUserBid(this.isConnected);
-    console.log(callToActionView);
+    const userHighestBid = this.state.userHighestBid;
+    const highestBid = this.state.highestBid;
     
     return (
       <View>
@@ -222,17 +252,17 @@ export default class TicketDetails extends React.Component {
                 <Text style={styles.pricingSNCFTxt}>Tarif SNCF</Text>
               </View>
               <View style={{ flex: 0.5, alignItems: 'flex-end' }}>
-                <Text style={styles.pricingSNCFValue}>77,00 €</Text>
+                <Text style={styles.pricingSNCFValue}>{sncfPrice}€</Text>
               </View>
             </View>
             <View style={styles.bidsContainer}>
               <View style={styles.highestBid}>
                 <Text style={styles.highestBidTxt}>Enchère la plus haute</Text>
-                <Text style={styles.highestBidValue}>22,00 €</Text>
+                <Text style={styles.highestBidValue}>{highestBid} €</Text>
               </View>
               <View style={styles.userBid}>
                 <Text style={styles.UserBidTxt}>Votre enchère</Text>
-                <Text style={styles.UserBidValue}>20,00 €</Text>
+                <Text style={styles.UserBidValue}>{userHighestBid} €</Text>
               </View>
               <View style={styles.higherOrdersContainer}>
                 <Image style={{ width: 22, height: 12, marginRight: 10 }} source={require('../images/people_icon_blue.png')}  />

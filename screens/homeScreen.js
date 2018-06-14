@@ -27,10 +27,21 @@ export default class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    // PushNotification.localNotificationSchedule({
-    //   message: "My Notification Message", // (required)
-    //   date: new Date(Date.now() + (5 * 1000)) // in 5 secs
-    // });
+
+    PushNotification.localNotificationSchedule({
+      message: 'coucou', // (required)
+      date: new Date(Date.now() + 2000)
+    });
+
+    global.socket.on('msg', (txt) => {
+      console.log('socket msg');
+      
+      PushNotification.localNotificationSchedule({
+        message: txt, // (required)
+        date: new Date(Date.now() + 2000)
+      });
+    })
+
   }
 
   render() {
